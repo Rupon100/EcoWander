@@ -32,9 +32,9 @@ const Banner = () => {
             <SwiperSlide>
                 <Slider2 />
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
                 <Slider3 />
-            </SwiperSlide>
+            </SwiperSlide> */}
             <SwiperSlide>
                 <Slider1 />
             </SwiperSlide>
