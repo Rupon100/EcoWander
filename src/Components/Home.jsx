@@ -1,9 +1,14 @@
-import React from 'react';
+import Experiances from "../Experiances/Experiances";
+import Banner from "./Banner";
+
 
 const Home = () => {
     return (
         <div>
-            <h1 className='bg-white p-14'>Home Here</h1>
+            <Banner></Banner>
+            <section className="max-w-5xl mx-auto p-10">
+                <Experiances></Experiances>
+            </section>
         </div>
     );
 };
