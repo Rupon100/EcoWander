@@ -12,7 +12,7 @@ const ExperianceCard = ({ experiances }) => {
               src={image}
               alt="travel image" />
           </figure>
-          <div className="card-body flex-grow">
+          <div className="card-body p-4 flex-grow">
             <h2 className="card-title">
               {title}
             </h2>
@@ -24,7 +24,7 @@ const ExperianceCard = ({ experiances }) => {
                 </ul>
             </div>
           </div>
-          <Link className='btn'>Explore</Link>
+          <Link className='w-full p-4 text-center font-semibold bg-sky-300 transition-all hover:bg-sky-500 hover:text-white rounded-b-xl'>Explore</Link>
         </div>
     );
 };
