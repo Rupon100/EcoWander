@@ -1,11 +1,11 @@
- 
+import slide3 from '../assets/slide3.jpg'
 
 const Slider3 = () => {
     return (
         <div
         className="hero  "
         style={{
-          backgroundImage: "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+          backgroundImage: `url(${slide3})`,
         }}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center m-24 md:my-40">
