@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
-    const {setUser, loginUser} = useContext(AuthContext);
+    const {setUser, loginUser, user, googleLogin} = useContext(AuthContext);
+    const [showPass, setShowPass] = useState(false);
+    const [error, setError] = useState("");
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -12,13 +16,33 @@ const Login = () => {
         const data = new FormData(e.target)
         const email = data.get("email");
         const pass = data.get("pass")
+
+        if(pass.length < 6) {
+            setError("Must need to 6 chracters!")
+            return ;
+        }else {
+            setError("");
+        }
+
         
         loginUser(email,pass)
         .then(result => {
-            setUser(result.user)
+            setUser(result.user);
+            setError("");
         })
-        .catch(error => console.log(error.message))
+        .catch(error => console.log(error.message));
     }
+
+    const handleGoogle = () => {
+        googleLogin()
+        .then(result => {
+            setUser(result.user);
+        })
+        .then(error => console.log(error.message));
+    }
+    console.log(user)
+
+    
 
     return (
         <div className="flex flex-col gap-2 justify-center items-center p-6">
@@ -31,19 +55,29 @@ const Login = () => {
                     </label>
                     <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                   </div>
-                  <div className="form-control">
+                  <div className="form-control relative">
                     <label className="label">
                       <span className="label-text">Password</span>
                     </label>
-                    <input type="password" name="pass" placeholder="password" className="input input-bordered" required />
+                    <input type={`${showPass ? "text" : "password"}`} name="pass" placeholder="password" className="input input-bordered" required />
+
+                    <button onClick={() => setShowPass(!showPass)} type="button" className="absolute right-4 bottom-12">
+                       {
+                         showPass ? <FaEye /> :  <FaEyeSlash /> 
+                       }
+                    </button>
+
                     <label className="label">
                       <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
                   </div>
+
+                  <span className="text-red-500 text-xs font-semibold">{error}</span>
+
                   <div className="form-control mt-6">
                     <button className="btn bg-sky-600 text-white hover:bg-sky-600">Login</button>
                     <p className="text-center font-semibold">OR</p>
-                    <button className="btn bg-sky-600 text-white hover:bg-sky-600">
+                    <button onClick={handleGoogle} className="btn bg-sky-600 text-white hover:bg-sky-600">
                         Google
                       <FaGoogle /> 
                     </button>

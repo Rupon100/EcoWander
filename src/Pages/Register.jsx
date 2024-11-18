@@ -1,9 +1,13 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FaEyeSlash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 
 const Register = () => {
     const { registerUser, setUser, user } = useContext(AuthContext);
+    const [showPass, setShowPass] = useState(false);
+    const [error, setError] = useState("");
     
 
     const handleRegister = (e) => {
@@ -15,14 +19,24 @@ const Register = () => {
         const photo = data.get("photo");
         const pass = data.get("pass")
         console.log(name,email,photo,pass)
+        if(pass.length < 6) {
+            setError("Must need to 6 chracters!")
+            return ;
+        }else {
+            setError("");
+        }
 
         registerUser(email, pass)
         .then(result => {
             setUser(result.user);
+            setError("");
         })
         .catch(error => console.log(error.message))
+
     }
-    console.log(user)
+    
+    
+
 
     return (
         <div className="flex flex-col gap-2 justify-center items-center p-6">
@@ -47,12 +61,21 @@ const Register = () => {
                     </label>
                     <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" required />
                   </div>
-                  <div className="form-control">
+                  <div className="form-control relative">
                     <label className="label">
                       <span className="label-text">Password</span>
                     </label>
-                    <input type="password" name="pass" placeholder="password" className="input input-bordered" required />
+                    <input type={`${showPass ? "text" : "password"}`} name="pass" placeholder="password" className="input input-bordered" required />
+                    <button onClick={() => setShowPass(!showPass)} type="button" className="absolute right-4 bottom-4
+                    ">
+                       {
+                         showPass ? <FaEye /> :  <FaEyeSlash /> 
+                       }
+                    </button>
                   </div>
+
+                  <span className="text-red-500 text-xs font-semibold">{error}</span>
+
                   <div className="form-control mt-6">
                     <button className="btn bg-sky-600 text-white hover:bg-sky-600">Register</button>
                     {/* <p className="text-center font-semibold">OR</p>
