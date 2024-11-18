@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
@@ -8,6 +8,7 @@ const Register = () => {
     const { registerUser, setUser, user } = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState("");
+    const navigate = useNavigate();
     
 
     const handleRegister = (e) => {
@@ -20,7 +21,7 @@ const Register = () => {
         const pass = data.get("pass")
         console.log(name,email,photo,pass)
         if(pass.length < 6) {
-            setError("Must need to 6 chracters!")
+            setError("Password must be at least 6 characters long, with at least one uppercase and one lowercase letter!")
             return ;
         }else {
             setError("");
@@ -29,6 +30,7 @@ const Register = () => {
         registerUser(email, pass)
         .then(result => {
             setUser(result.user);
+            navigate('/')
             setError("");
         })
         .catch(error => console.log(error.message))

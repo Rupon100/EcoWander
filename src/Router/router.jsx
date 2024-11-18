@@ -7,6 +7,7 @@ import Details from "../Experiances/Details";
 import ErrorPage from "../Components/ErrorPage";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoute from "../AuthProvider/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/experiances/:id',
-                element: <Details></Details>,
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: async({ params }) => {
                     const res = await fetch('/data.json');
                     const data = await res.json();

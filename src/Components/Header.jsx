@@ -1,7 +1,16 @@
 
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logout();
+    }
+    console.log(user)
+
     return (
         <div className='flex justify-between items-center px-6 md:px-8 py-4 border border-b'>
             <h2 className='logo font-bold  text-xl cursor-pointer'>EcoWander</h2>
@@ -16,7 +25,9 @@ const Header = () => {
                     <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                   </div>
                 </div> */}
-                <Link to='/login' className='btn'>Login</Link>
+                {
+                    user ? <button onClick={handleLogOut} className='btn'>Log out</button> : <Link to='/login' className='btn'>Login</Link>
+                }
             </div>
         </div>
     );

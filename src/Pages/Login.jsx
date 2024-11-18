@@ -2,13 +2,17 @@ import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
     const {setUser, loginUser, user, googleLogin} = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState("");
+   
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -18,7 +22,7 @@ const Login = () => {
         const pass = data.get("pass")
 
         if(pass.length < 6) {
-            setError("Must need to 6 chracters!")
+            setError("Password must be at least 6 characters long, with at least one uppercase and one lowercase letter.!")
             return ;
         }else {
             setError("");
@@ -28,6 +32,8 @@ const Login = () => {
         loginUser(email,pass)
         .then(result => {
             setUser(result.user);
+            
+            navigate(`${location?.state ? location.state : '/'}`)
             setError("");
         })
         .catch(error => console.log(error.message));
@@ -37,10 +43,12 @@ const Login = () => {
         googleLogin()
         .then(result => {
             setUser(result.user);
+             
+            navigate(`${location?.state ? location.state : '/'}`)
         })
-        .then(error => console.log(error.message));
+        .catch(error => console.log(error.message));
     }
-    console.log(user)
+    //console.log(user)
 
     
 
