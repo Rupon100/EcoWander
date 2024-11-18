@@ -6,13 +6,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
-    const {setUser, loginUser, user, googleLogin} = useContext(AuthContext);
+    const {setUser, loginUser, user, googleLogin, resetPass} = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState("");
+    const [email, setEmail] = useState("");
    
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location)
+    console.log(location.state)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -33,10 +34,15 @@ const Login = () => {
         .then(result => {
             setUser(result.user);
             
-            navigate(`${location?.state ? location.state : '/'}`)
+            navigate(location?.state ? location.state : '/');
+
             setError("");
         })
-        .catch(error => console.log(error.message));
+        .catch(error => {
+          const errorMsg = error.message.split('/').pop().replace(').', '');
+          setError(errorMsg)
+        });
+
     }
 
     const handleGoogle = () => {
@@ -44,14 +50,23 @@ const Login = () => {
         .then(result => {
             setUser(result.user);
              
-            navigate(`${location?.state ? location.state : '/'}`)
+            navigate(location?.state ? location.state : '/')
+
         })
         .catch(error => console.log(error.message));
     }
-    //console.log(user)
 
+
+    const resetPassword = () => {
+      if(email){
+        resetPass(email)
+        .then(() => console.log("Reset Email Sent!"))
+      }
+    }
+
+     
     
-
+     
     return (
         <div className="flex flex-col gap-2 justify-center items-center p-6">
             <h1 className="text-2xl font-semibold">Login</h1>
@@ -61,7 +76,16 @@ const Login = () => {
                     <label className="label">
                       <span className="label-text">Email</span>
                     </label>
-                    <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+
+                    <input 
+                      type="email" 
+                      name="email" 
+                      placeholder="email" 
+                      value={email} 
+                      className="input input-bordered" 
+                      required 
+                      onChange={(e) => setEmail(e.target.value)} />
+
                   </div>
                   <div className="form-control relative">
                     <label className="label">
@@ -76,7 +100,7 @@ const Login = () => {
                     </button>
 
                     <label className="label">
-                      <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                      <button onClick={resetPassword} className="label-text-alt link link-hover">Forgot password?</button>
                     </label>
                   </div>
 

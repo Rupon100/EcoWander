@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/profile',
-                element: <Profile></Profile>
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>
             },
             {
                 path: '/experiances/:id',
@@ -44,12 +44,14 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
-            {
-                path: '*',
-                element: <ErrorPage></ErrorPage>
-            }
         ]
     },
+    {
+    
+       path: '*',
+       element: <ErrorPage></ErrorPage>
+    
+    }
 
 ])
 

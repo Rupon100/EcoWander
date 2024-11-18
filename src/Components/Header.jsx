@@ -1,4 +1,3 @@
-
 import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
@@ -17,14 +16,14 @@ const Header = () => {
             <div className='flex items-center gap-2'>
                 <ul className='flex gap-4 justify-center items-center'>
                     <NavLink to='/' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'} >Home</NavLink>
-                    <NavLink to='/update-profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>Update Profile</NavLink>
-                    <NavLink to='/profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>User Profile</NavLink>
+                    {
+                        user && <div className='space-x-4'>
+                            <NavLink to='/update-profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>Update Profile</NavLink>
+                            <NavLink to='/profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>User Profile</NavLink>
+                        </div>
+                    }
                 </ul>
-                {/* <div className="avatar online">
-                  <div className="w-12 rounded-full">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                  </div>
-                </div> */}
+                 
                 {
                     user ? <button onClick={handleLogOut} className='btn'>Log out</button> : <Link to='/login' className='btn'>Login</Link>
                 }

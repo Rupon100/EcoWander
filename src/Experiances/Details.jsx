@@ -1,9 +1,37 @@
-import { useLoaderData, useParams } from "react-router-dom";
-
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import { FaVideo } from "react-icons/fa6";
+import { set } from 'date-fns';
+import { useState } from "react";
+import Swal from 'sweetalert2'
  
 const Details = () => {
     const { id, title, image, categoryName, shortDescription, adventureCost, bookingAvailability,location, duration, adventureLevel, includedItems,ecoFriendlyFeatures,maxGroupSize,specialInstructions } = useLoaderData();
-     
+    // const [time, setTime] = useState(null);
+    
+
+    const handleTalkExpert = () => {
+        const current = new Date();
+
+        const startTime = set(current, {hours: 10, minutes: 0, seconds: 0, milliseconds: 0});
+        const endTime = set(current, { hours: 20, minutes: 0, seconds: 0, milliseconds: 0 });
+
+        if(current >= startTime && current <= endTime){
+            window.open("https://meet.google.com/ust-uxts-ftk")
+        }else{
+            return Swal.fire({
+                title: "Time is up now!",
+                text: "Available for consultation: 10:00 AM - 8:00 PM",
+                icon: "info",
+                confirmButtonText: "Ok"
+            });
+        }
+
+        
+        
+    }
+    
+    
+
     return (
         <div className="max-w-4xl mx-auto">
             <div className="mx-2  my-4 p-4 border rounded-md flex justify-center items-center flex-col  gap-4">
@@ -53,6 +81,12 @@ const Details = () => {
                     </ul>
                  </div>
                </div>
+               <button onClick={handleTalkExpert} className="flex gap-2 justify-center items-center border-none px-6 py-2 rounded bg-sky-600 text-white hover:bg-sky-500 transition-all">
+                 <p>Talk With Expert</p>
+                 <span>
+                   <FaVideo />
+                 </span>
+               </button>
             </div>
         </div>
     );
