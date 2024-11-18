@@ -1,8 +1,10 @@
  
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const ExperianceCard = ({ experiances }) => {
     const { id ,title, image, ecoFriendlyFeatures } = experiances;
+
+     
      
     return (
         <div className="card bg-base-100 border flex flex-col">
@@ -24,7 +26,7 @@ const ExperianceCard = ({ experiances }) => {
                 </ul>
             </div>
           </div>
-          <Link className='w-full p-4 text-center font-semibold bg-sky-300 transition-all hover:bg-sky-500 hover:text-white rounded-b-xl'>Explore More</Link>
+          <Link to={`experiances/${id}`} className='w-full p-4 text-center font-semibold bg-sky-300 transition-all hover:bg-sky-500 hover:text-white rounded-b-xl'>Explore More</Link>
         </div>
     );
 };
