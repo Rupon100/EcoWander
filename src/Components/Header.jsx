@@ -1,5 +1,5 @@
 
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -16,7 +16,7 @@ const Header = () => {
                     <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                   </div>
                 </div> */}
-                <button className='btn'>Login</button>
+                <Link to='/login' className='btn'>Login</Link>
             </div>
         </div>
     );
