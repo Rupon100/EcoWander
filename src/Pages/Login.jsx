@@ -1,10 +1,23 @@
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
+    const {setUser, loginUser} = useContext(AuthContext);
 
     const handleLogin = (e) => {
         e.preventDefault();
+
+        const data = new FormData(e.target)
+        const email = data.get("email");
+        const pass = data.get("pass")
+        
+        loginUser(email,pass)
+        .then(result => {
+            setUser(result.user)
+        })
+        .catch(error => console.log(error.message))
     }
 
     return (
