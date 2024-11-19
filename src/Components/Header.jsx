@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { IoMenuSharp } from "react-icons/io5";
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
@@ -14,7 +13,6 @@ const Header = () => {
     const handleMenu = () => {
         setIsopen(!isOpen)
     }
-    console.log(isOpen)
 
     const closeMenu = () => {
         setIsopen(false);
@@ -34,8 +32,7 @@ const Header = () => {
                         </div>
                     }
                 </ul>
-
-                {/* <IoMenuSharp className='w-8 h-8' /> */}
+    
 
                 <button onClick={handleMenu} className='md:hidden flex justify-center items-center'>
                     {
