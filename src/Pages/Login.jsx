@@ -13,7 +13,6 @@ const Login = () => {
    
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location.state)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -53,19 +52,9 @@ const Login = () => {
             navigate(location?.state ? location.state : '/')
 
         })
-        .catch(error => console.log(error.message));
     }
 
 
-    // const resetPassword = () => {
-    //   if(email){
-    //     resetPass(email)
-    //     .then(() => console.log("Reset Email Sent!"))
-    //   }
-    // }
-
-     console.log(updateEmail)
-    
      
     return (
         <div className="flex flex-col gap-2 justify-center items-center p-6">

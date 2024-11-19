@@ -8,8 +8,7 @@ const Header = () => {
     const handleLogOut = () => {
         logout();
     }
-    console.log(user)
-
+ 
     return (
         <div className='flex justify-between items-center px-6 md:px-8 py-4 border border-b'>
             <h2 className='logo font-bold  text-xl cursor-pointer'>EcoWander</h2>

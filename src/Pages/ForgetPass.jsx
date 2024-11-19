@@ -11,7 +11,6 @@ const ForgetPass = () => {
 
           resetPass(updateEmail)
           .then(() => {
-            console.log("Reset Email Sent!")
             window.open("https://mail.google.com/")
           })
 

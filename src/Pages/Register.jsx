@@ -19,7 +19,7 @@ const Register = () => {
         const email = data.get("email");
         const photo = data.get("photo");
         const pass = data.get("pass")
-        console.log(name,email,photo,pass)
+       
         if(pass.length < 6) {
             setError("Password must be at least 6 characters long, with at least one uppercase and one lowercase letter!")
             return ;
@@ -33,8 +33,6 @@ const Register = () => {
             navigate('/')
             setError("");
         })
-        .catch(error => console.log(error.message))
-
     }
     
     

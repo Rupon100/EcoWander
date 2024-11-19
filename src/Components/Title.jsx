@@ -8,12 +8,11 @@ const Title = () => {
     useEffect(() => {
         const path = location.pathname;
 
-        if(location.pathname.startsWith('/experiences/')) {
+        if(location.pathname.startsWith('/experiances/')) {
             const cardDetail = path.split('/')[2];
             document.title = `Experiance ${cardDetail} | EcoWander`;
         }else {
 
-        
                 switch(location.pathname) {
                     case '/':
                         document.title = 'Home | EcoWander';

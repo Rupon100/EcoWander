@@ -16,17 +16,14 @@ const UpdateProfile = () => {
       const form = new FormData(e.target);
       const name = form.get("name")
       const photo = form.get("photo");
-      console.log(name, photo)
-
+      
       upDateProfile(name, photo)
       .then(() => {
-        console.log("Profile Update!")
         setUser({ ...user, displayName: name, photoURL: photo });
         navigate('/profile')
       })
-      .catch((error) => console.log(error.message))
+     
 
-      console.log(user)
     }
 
 
