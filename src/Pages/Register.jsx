@@ -20,7 +20,8 @@ const Register = () => {
         const photo = data.get("photo");
         const pass = data.get("pass")
        
-        if(pass.length < 6) {
+        const passRegx = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if(!passRegx.test(pass)) {
             setError("Password must be at least 6 characters long, with at least one uppercase and one lowercase letter!")
             return ;
         }else {

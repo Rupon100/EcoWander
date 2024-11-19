@@ -21,3 +21,5 @@ EcoWander aims to provide users with a convenient, interactive platform for disc
 - animate.css - for adding animations to elements.
 - react-icons - for adding icons throughout the app, like the menu icon.
 - firebase - for authentication and password reset functionality.
+- tailwindcss - a utility-first CSS framework for styling.
+- daisyui - a TailwindCSS plugin providing pre-designed UI components.
