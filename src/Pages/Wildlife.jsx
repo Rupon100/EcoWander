@@ -4,7 +4,7 @@ const Wildlife = () => {
     return (
         <div>
             <img className='h-[350px] md:h-[450px] w-full object-cover' src={slide4} alt="mountain" />
-            <div className='w-9/12 mx-auto space-y-6 p-4 text-center'>
+            <div className='w-11/12 md:w-9/12 mx-auto space-y-6 p-4 text-center'>
                 <div className='space-y-4'>
                     <h1 className="text-2xl md:text-4xl font-bold animate__animated animate__bounceIn">Wildlife Safari Wonders</h1>
                     <p className='text-left'>
