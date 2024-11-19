@@ -19,7 +19,7 @@ const Header = () => {
                     {
                         user && <div className='space-x-4'>
                             <NavLink to='/update-profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>Update Profile</NavLink>
-                            <NavLink to='/profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>User Profile</NavLink>
+                            <NavLink to='/profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>My Profile</NavLink>
                         </div>
                     }
                 </ul>

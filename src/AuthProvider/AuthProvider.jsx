@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, validatePassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, validatePassword } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../ultis/firebase.config";
 
@@ -8,6 +8,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [updateEmail, setUpdateEmail] = useState("");
 
     const registerUser = (email,pass) => {
         return createUserWithEmailAndPassword(auth, email, pass);
@@ -28,23 +29,35 @@ const AuthProvider = ({children}) => {
         return sendPasswordResetEmail(auth, email);
     }
 
+    const upDateProfile = (name, photo) => {
+        // return(auth.currentUser, {displayName: name, photoURL: photo})
+        if(auth.currentUser){
+            return updateProfile(auth.currentUser, {
+                displayName: name,
+                photoURL: photo
+            })
+        }
+    }
+
     const logout = () => {
         setLoading(true)
         return signOut(auth);
     }
-
 
     
      
     const contextValue = {
         user,
         loading,
+        updateEmail,
+        setUpdateEmail,
         setUser,
         registerUser,
         loginUser,
         googleLogin,
         logout,
-        resetPass
+        resetPass,
+        upDateProfile
     }
 
     useEffect(() => {

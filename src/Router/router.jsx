@@ -8,6 +8,7 @@ import ErrorPage from "../Components/ErrorPage";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "../AuthProvider/PrivateRoute";
+import ForgetPass from "../Pages/ForgetPass";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/update-profile',
-                element: <UpdateProfile></UpdateProfile>
+                element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
             },
             {
                 path: '/profile',
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
+            {
+                path: '/forgetpass',
+                element: <ForgetPass></ForgetPass>
+            }
         ]
     },
     {

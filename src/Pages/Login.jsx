@@ -6,10 +6,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
-    const {setUser, loginUser, user, googleLogin, resetPass} = useContext(AuthContext);
+    const {setUser, loginUser, user, googleLogin, resetPass, updateEmail, setUpdateEmail} = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState("");
-    const [email, setEmail] = useState("");
+    // const [email, setEmail] = useState("");
    
     const navigate = useNavigate();
     const location = useLocation();
@@ -57,14 +57,14 @@ const Login = () => {
     }
 
 
-    const resetPassword = () => {
-      if(email){
-        resetPass(email)
-        .then(() => console.log("Reset Email Sent!"))
-      }
-    }
+    // const resetPassword = () => {
+    //   if(email){
+    //     resetPass(email)
+    //     .then(() => console.log("Reset Email Sent!"))
+    //   }
+    // }
 
-     
+     console.log(updateEmail)
     
      
     return (
@@ -81,10 +81,10 @@ const Login = () => {
                       type="email" 
                       name="email" 
                       placeholder="email" 
-                      value={email} 
+                      value={updateEmail} 
                       className="input input-bordered" 
                       required 
-                      onChange={(e) => setEmail(e.target.value)} />
+                      onChange={(e) => setUpdateEmail(e.target.value)} />
 
                   </div>
                   <div className="form-control relative">
@@ -100,7 +100,7 @@ const Login = () => {
                     </button>
 
                     <label className="label">
-                      <button onClick={resetPassword} className="label-text-alt link link-hover">Forgot password?</button>
+                      <Link to='/forgetpass' className="label-text-alt link link-hover">Forgot password?</Link>
                     </label>
                   </div>
 
