@@ -93,18 +93,21 @@ const Login = () => {
                     </label>
                   </div>
 
-                  <span className="text-red-500 text-xs font-semibold">{error}</span>
+                  <span className="text-red-500 text-xs font-semibold">{error}</span>  
 
                   <div className="form-control mt-6">
-                    <button className="btn bg-sky-600 text-white hover:bg-sky-600">Login</button>
-                    <p className="text-center font-semibold">OR</p>
-                    <button onClick={handleGoogle} className="btn bg-sky-600 text-white hover:bg-sky-600">
-                        Google
-                      <FaGoogle /> 
-                    </button>
+                    <button className="btn mb-2 border-none bg-sky-600 text-white hover:bg-sky-600">Login</button>
+                    <p className="-mb-6 text-center font-semibold">OR</p>
                   </div>
                 </form>
-                <h4 className="text-sm text-center p-1">New to this application? <Link to='/register'>Register</Link></h4>
+                <div className="mx-8">
+                    <button onClick={handleGoogle} className="btn border-none bg-sky-600 text-white hover:bg-sky-600 w-full">
+                        <h4>Google</h4>
+                        <FaGoogle className="mt-1" /> 
+                    </button>
+                </div>
+                
+                <h4 className="text-sm text-center p-1 my-4">New to this application? <Link to='/register'>Register</Link></h4>
             </div>
         </div>
     );

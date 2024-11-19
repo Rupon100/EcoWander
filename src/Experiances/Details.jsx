@@ -25,20 +25,15 @@ const Details = () => {
                 confirmButtonText: "Ok"
             });
         }
-
-        
-        
     }
     
-    
-
     return (
         <div className="max-w-4xl mx-auto">
             <div className="mx-2  my-4 p-4 border rounded-md flex justify-center items-center flex-col  gap-4">
                <div className="w-ful h-64 md:w-full">
                   <img className="w-full h-full object-cover rounded-md" src={image} alt="details image" />
                </div>
-               <div className="w-full md:w-full p-2 space-y-4">
+               <div className="w-full md:w-full p-2 space-y-2 md:space-y-4">
                  <span className="font-medium text-sm border p-1 rounded">{categoryName}</span>
                  <h1 className="font-semibold text-2xl">{title}</h1>
                  <p className="text-sm">{shortDescription}</p>

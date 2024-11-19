@@ -18,7 +18,7 @@ const Banner = () => {
         slidesPerView={1}
         pagination={{ clickable: true }}
         navigation={true}
-        className='h-screen border border-red-600'
+        className='h-screen'
       >
         <SwiperSlide>
             <Slider2 />

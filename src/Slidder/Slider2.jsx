@@ -5,7 +5,7 @@ import 'animate.css';
 const Slider2 = () => {
     return (
         <div
-            className="hero min-h-screen border border-red-500"
+            className="hero min-h-screen"
             style={{
               backgroundImage: `url(${slide2})`,
               backgroundSize: 'cover',

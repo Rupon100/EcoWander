@@ -10,6 +10,7 @@ const Footer = () => {
                     <br />
                      All terms and condition are reserved for	&#169;EcoWnader
                   </p>
+                  <p>+8801842482658</p>
                 </aside>
                 <nav>
                   <h6 className="text-white font-semibold text-lg">Social</h6>
