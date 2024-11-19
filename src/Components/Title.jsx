@@ -29,6 +29,12 @@ const Title = () => {
                     case '/register':
                         document.title = 'Register | EcoWander';
                         break; 
+                    case '/about':
+                        document.title = 'About | EcoWander'   
+                        break; 
+                    case '/contact':
+                        document.title = 'About | EcoWander'   
+                        break;     
                     default:
                         document.title = 'EcoWander';
                         break 
