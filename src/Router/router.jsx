@@ -52,14 +52,6 @@ const router = createBrowserRouter([
                 path: '/forgetpass',
                 element: <ForgetPass></ForgetPass>
             },
-            {
-                path: '/about',
-                element: <About></About>
-            },
-            {
-                path: '/contact',
-                element: <Contact></Contact>
-            }
         ]
     },
     {

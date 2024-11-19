@@ -21,8 +21,8 @@ const Header = () => {
                             <NavLink to='/profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>My Profile</NavLink>
                         </div>
                     }
-                    <NavLink to='/about' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>About</NavLink>
-                    <NavLink to='/contact' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>Contact</NavLink>
+                    {/* <NavLink to='/about' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>About</NavLink>
+                    <NavLink to='/contact' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>Contact</NavLink> */}
                 </ul>
                  
                 {

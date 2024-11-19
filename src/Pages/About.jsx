@@ -2,7 +2,7 @@ import grpImg from '../assets/travel-grp.jpg'
 
 const About = () => {
     return (
-        <div className='my-12  flex gap-6 flex-col justify-center items-center text-center'>
+        <div className='my-16  flex gap-6 flex-col justify-center items-center text-center'>
             <div className='space-y-2 w-4/5'>
                <span className='text-sm font-semibold text-sky-600'>Know Everything About Us</span>
                <h1 className='text-2xl md:text-4xl font-semibold'>About Our Team</h1>
