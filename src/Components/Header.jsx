@@ -14,6 +14,7 @@ const Header = () => {
     const handleMenu = () => {
         setIsopen(!isOpen)
     }
+    console.log(isOpen)
 
     const closeMenu = () => {
         setIsopen(false);
@@ -36,35 +37,35 @@ const Header = () => {
 
                 {/* <IoMenuSharp className='w-8 h-8' /> */}
 
-                 
-                <div className="dropdown md:hidden z-10">
-                  <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M4 6h16M4 12h16M4 18h7" />
-                    </svg>
-                  </div>
-                  <ul
-                    tabIndex={0}
-                    className="menu right-4 absolute z-11 menu-sm dropdown-content bg-white rounded-box z-[1] mt-3 w-52 p-2 shadow flex flex-col gap-2">
-                       <NavLink to='/' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'} >Home</NavLink>
-                        {
-                            user && <div className='flex flex-col gap-2'>
-                                <NavLink to='/update-profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>Update Profile</NavLink>
-                                <NavLink to='/profile' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'}>My Profile</NavLink>
-                            </div>
-                        }
-                  </ul>
-                </div>
-
+                <button onClick={handleMenu} className='md:hidden flex justify-center items-center'>
+                    {
+                        isOpen 
+                        ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                          </svg>
+                        :  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                           </svg>
+                    }
+                </button>
+                
+               
+                {
+                    isOpen && (
+                        <div className='md:hidden absolute top-20 right-2 z-40 bg-opacity-75 bg-gray-700 backdrop-blur  p-4 w-auto rounded'>
+                            <ul className='min-w-44 flex gap-2 flex-col flex-nowrap justify-center items-center text-center text-white'>
+                                <NavLink to='/' onClick={closeMenu} className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-white'} >Home</NavLink>
+                                {
+                                    user && <div className='flex gap-2 flex-col text-white'>
+                                        <NavLink to='/update-profile' onClick={closeMenu} className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-white'}>Update Profile</NavLink>
+                                        <NavLink to='/profile' onClick={closeMenu} className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-white'}>My Profile</NavLink>
+                                    </div>
+                                }
+                            </ul>
+                        </div>
+                    )
+                }
+              
 
                 {
                     user ? <button onClick={handleLogOut} className='btn border border-sky-600 rounded-none'>Log out</button> : <Link to='/login' className='btn border border-sky-600 rounded-none'>Login</Link>
