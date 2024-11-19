@@ -16,20 +16,15 @@ const Banner = () => {
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={0}
         slidesPerView={1}
-        // loop={true}
-        // autoplay={{
-        //     delay: 4000,  
-        //     disableOnInteraction: false, 
-        // }}
         pagination={{ clickable: true }}
         navigation={true}
         
       >
         <SwiperSlide>
-            <Slider4 />
+            <Slider2 />
         </SwiperSlide>
         <SwiperSlide>
-            <Slider2 />
+            <Slider4 />
         </SwiperSlide>
         <SwiperSlide>
             <Slider1 />

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import slide4 from '../assets/slide4.jpg'
 import 'animate.css';
 
@@ -16,7 +17,7 @@ const Slider4 = () => {
             <p className="mb-5">
               Embark on a sustainable journey through wild habitats, observing animals in their natural environments responsibly.
             </p>
-            <button className="btn text-white bg-sky-600 hover:bg-sky-500">View Details</button>
+            <Link to='/wildlife' className="btn text-white bg-sky-600 hover:bg-sky-500">View Details</Link>
           </div>
         </div>
     </div>

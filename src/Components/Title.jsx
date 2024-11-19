@@ -34,7 +34,16 @@ const Title = () => {
                         break; 
                     case '/contact':
                         document.title = 'About | EcoWander'   
-                        break;     
+                        break;
+                    case '/forest':
+                        document.title = 'Forest | EcoWander'   
+                        break;  
+                    case '/wildlife':
+                        document.title = 'Wildlife | EcoWander'   
+                        break; 
+                    case '/mountain':
+                        document.title = 'Mountain | EcoWander'   
+                        break;               
                     default:
                         document.title = 'EcoWander';
                         break 

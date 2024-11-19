@@ -11,6 +11,9 @@ import PrivateRoute from "../AuthProvider/PrivateRoute";
 import ForgetPass from "../Pages/ForgetPass";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
+import Mountain from "../Pages/Mountain";
+import Wildlife from "../Pages/Wildlife";
+import Forest from "../Pages/Forest";
 
 const router = createBrowserRouter([
     {
@@ -52,6 +55,18 @@ const router = createBrowserRouter([
                 path: '/forgetpass',
                 element: <ForgetPass></ForgetPass>
             },
+            {
+                path: '/mountain',
+                element: <Mountain></Mountain>
+            },
+            {
+                path: '/wildlife',
+                element: <Wildlife></Wildlife>
+            },
+            {
+                path: '/forest',
+                element: <Forest></Forest>
+            }
         ]
     },
     {

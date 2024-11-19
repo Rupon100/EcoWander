@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import slide2 from '../assets/slide2.jpg'
 import 'animate.css';
 
@@ -15,7 +16,7 @@ const Slider2 = () => {
                 <p className="mb-5">
                    Discover hidden trails and breathtaking views while preserving the pristine mountain ecosystems.
                 </p>
-                <button className="btn text-white bg-sky-600 hover:bg-sky-500">View Details</button>
+                <Link to='/mountain' className="btn text-white bg-sky-600 hover:bg-sky-500">View Details</Link>
               </div>
             </div>
         </div>
