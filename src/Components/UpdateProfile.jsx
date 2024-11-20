@@ -23,9 +23,10 @@ const UpdateProfile = () => {
 
 
     return (
-        <div className='w-full flex gap-8 flex-col justify-center items-center my-24 animate__animated animate__fadeInLeft'>
+        <div className='min-h-screen w-full flex gap-8 flex-col justify-center items-center  animate__animated animate__fadeInUp'>
+          <div>
             <h1 className='font-semibold text-xl md:text-4xl text-center '>Update Your Profile</h1>
-            <form onSubmit={handleUpdate} className="card-body max-w-xl shadow">
+            <form onSubmit={handleUpdate} className="card-body max-w-xl shadow flex ">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
@@ -43,6 +44,7 @@ const UpdateProfile = () => {
                   <button className="btn bg-sky-600 hover:bg-sky-500 text-white">Update</button>
                 </div>
             </form>
+          </div>  
         </div>
     );
 };
