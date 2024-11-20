@@ -6,10 +6,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
-    const {setUser, loginUser, user, googleLogin, resetPass, updateEmail, setUpdateEmail} = useContext(AuthContext);
+    const {setUser, loginUser, googleLogin, updateEmail, setUpdateEmail} = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState("");
-    // const [email, setEmail] = useState("");
    
     const navigate = useNavigate();
     const location = useLocation();
@@ -29,7 +28,6 @@ const Login = () => {
             setError("");
         }
 
-        
         loginUser(email,pass)
         .then(result => {
             setUser(result.user);
@@ -48,14 +46,10 @@ const Login = () => {
         googleLogin()
         .then(result => {
             setUser(result.user);
-             
             navigate(location?.state ? location.state : '/')
-
         })
     }
 
-
-     
     return (
         <div className="flex flex-col gap-2 justify-center items-center p-6">
             <h1 className="text-2xl font-semibold">Login</h1>
@@ -106,7 +100,6 @@ const Login = () => {
                         <FaGoogle className="mt-1" /> 
                     </button>
                 </div>
-                
                 <h4 className="text-sm text-center p-1 my-4">New to this application? <Link to='/register'>Register</Link></h4>
             </div>
         </div>

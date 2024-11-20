@@ -9,8 +9,6 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "../AuthProvider/PrivateRoute";
 import ForgetPass from "../Pages/ForgetPass";
-import About from "../Pages/About";
-import Contact from "../Pages/Contact";
 import Mountain from "../Pages/Mountain";
 import Wildlife from "../Pages/Wildlife";
 import Forest from "../Pages/Forest";

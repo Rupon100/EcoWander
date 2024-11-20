@@ -1,13 +1,10 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData} from "react-router-dom";
 import { FaVideo } from "react-icons/fa6";
 import { set } from 'date-fns';
-import { useState } from "react";
 import Swal from 'sweetalert2'
  
 const Details = () => {
-    const { id, title, image, categoryName, shortDescription, adventureCost, bookingAvailability,location, duration, adventureLevel, includedItems,ecoFriendlyFeatures,maxGroupSize,specialInstructions } = useLoaderData();
-    // const [time, setTime] = useState(null);
-    
+    const { title, image, categoryName, shortDescription, adventureCost, bookingAvailability,location, duration, adventureLevel, includedItems,ecoFriendlyFeatures,maxGroupSize,specialInstructions } = useLoaderData();
 
     const handleTalkExpert = () => {
         const current = new Date();
@@ -40,7 +37,7 @@ const Details = () => {
                  <div className="flex gap-6">
                     <h4 className="text-lg font-semibold">Cost: {adventureCost}$</h4>
                     <div className="flex gap-1">
-                        <h2>Seat: </h2>
+                        <h2>Booking Availability: </h2>
                         {
                            bookingAvailability ? <p className="text-sky-600 font-semibold">Available</p> : <p className="text-red-500 font-semibold">Unavailable</p>
                         }

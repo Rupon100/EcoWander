@@ -3,12 +3,9 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import 'animate.css';
 
-
 const UpdateProfile = () => {
-
     const { upDateProfile, user, setUser } = useContext(AuthContext);
     const navigate = useNavigate();
-   //for forget
 
     const handleUpdate = (e) => {
       e.preventDefault();
@@ -22,8 +19,6 @@ const UpdateProfile = () => {
         setUser({ ...user, displayName: name, photoURL: photo });
         navigate('/profile')
       })
-     
-
     }
 
 

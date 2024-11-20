@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import slide4 from '../assets/slide4.jpg'
 import 'animate.css';
 
-
 const Slider4 = () => {
     return (
         <div

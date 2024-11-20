@@ -3,7 +3,6 @@ import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import Banner from "./Banner";
 
-
 const Home = () => {
     return (
         <div>

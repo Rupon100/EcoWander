@@ -5,7 +5,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 
 const Register = () => {
-    const { registerUser, setUser, user, upDateProfile } = useContext(AuthContext);
+    const { registerUser, setUser, upDateProfile } = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState("");
     const navigate = useNavigate();
@@ -28,19 +28,6 @@ const Register = () => {
             setError("");
         }
 
-        // registerUser(email, pass)
-        // .then(result => {
-        //     setUser(result.user);
-        //     navigate('/')
-        //     setError("");
-        // })
-
-        // upDateProfile(name, photo)
-        // .then(() => {
-        //   setUser({ ...user, displayName: name, photoURL: photo });
-        //   navigate('/profile')
-        // })
-
         registerUser(email, pass)
         .then(result => {
             setUser(result.user);
@@ -57,18 +44,8 @@ const Register = () => {
           setError("");
           navigate('/')
         })
-
-        // upDateProfile(name, photo)
-        // .then(() => {
-        //   setUser({ ...user, displayName: name, photoURL: photo });
-        //   navigate('/profile')
-        // })
-
     }
     
-    
-
-
     return (
         <div className="flex flex-col gap-2 justify-center items-center p-6">
             <h1 className="text-2xl font-semibold">Register</h1>

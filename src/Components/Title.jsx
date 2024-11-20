@@ -12,7 +12,6 @@ const Title = () => {
             const cardDetail = path.split('/')[2];
             document.title = `Experiance ${cardDetail} | EcoWander`;
         }else {
-
                 switch(location.pathname) {
                     case '/':
                         document.title = 'Home | EcoWander';

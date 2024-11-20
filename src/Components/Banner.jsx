@@ -1,11 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import Slider1 from '../Slidder/Slider1';
 import Slider2 from '../Slidder/Slider2';
 import Slider4 from '../Slidder/Slider4';
