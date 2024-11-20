@@ -20,8 +20,8 @@ const Header = () => {
     }
  
     return (
-        <div className='flex justify-between items-center px-6 md:px-8 py-4 border border-b'>
-            <Link to='/' className='logo font-bold  text-xl cursor-pointer'>EcoWander</Link>
+        <div className='flex justify-between items-center px-4 md md:px-8 py-2 md:py-4 border border-b'>
+            <Link to='/' className='logo font-bold text-lg md:text-xl cursor-pointer'>EcoWander</Link>
 
             <ul className='hidden md:flex gap-4 justify-center items-center'>
                 {/* <NavLink to='/' className={({ isActive }) => isActive ? 'bg-sky-600 text-white p-2 rounded-md border-none' : 'text-black'} >Home</NavLink> */}
@@ -49,7 +49,7 @@ const Header = () => {
                 }
             </ul>
 
-            <div className='flex items-center gap-4 relative'>
+            <div className='flex justify-center items-center gap-3 md:gap-4 relative'>
                 <button onClick={handleMenu} className='md:hidden flex justify-center items-center'>
                     {
                         isOpen 
@@ -102,7 +102,7 @@ const Header = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
                         </svg>
                         </button> 
-                    : <Link to='/login' className='btn border-[2px] bg-gray-50 border-sky-600 rounded-md'>
+                    : <Link to='/login' className='btn  border-[2px] bg-gray-50 border-sky-600 rounded-md'>
                         Login
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
@@ -110,7 +110,7 @@ const Header = () => {
                        </Link>
                 }
 
-                <div>
+                <div className='flex items-center'>
                     {
                         user 
                         ? (<div title={user?.displayName} className="tooltip ring-text-sky-700 ring-offset-base-100 w-10 rounded-full ring ring-offset-2 cursor-pointer">
