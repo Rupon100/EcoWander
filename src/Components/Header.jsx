@@ -112,9 +112,9 @@ const Header = () => {
 
                 <div>
                     {
-                        user && user.photoURL 
-                        ? (<div title={user.displayName} className="ring-text-sky-700 ring-offset-base-100 w-10 rounded-full ring ring-offset-2 cursor-pointer">
-                            <img className="w-10 h-10 border rounded-full object-cover" src={user.photoURL} />
+                        user 
+                        ? (<div title={user?.displayName} className="tooltip ring-text-sky-700 ring-offset-base-100 w-10 rounded-full ring ring-offset-2 cursor-pointer">
+                            <img className="w-10 h-10 border rounded-full object-cover" src={user?.photoURL} />
                           </div>)
                         : (<div>
                             <img title='No User!' className='w-10 h-10 object-cover' src={userImg} alt="user default" />

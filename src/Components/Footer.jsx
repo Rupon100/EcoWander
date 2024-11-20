@@ -1,19 +1,35 @@
 
 const Footer = () => {
     return (
-        <div className=' '>
-            <footer className="footer bg-sky-600 text-white p-10 justify-around">
-                <aside>
-                  <h1 className="logo font-bold text-xl md:text-2xl">EcoWander</h1>
-                  <p>
-                     Make a Eco Advanture 
-                    <br />
-                     All terms and condition are reserved for	&#169;EcoWnader
-                  </p>
-                  <p>+8801842482658</p>
-                </aside>
-                <nav>
-                  <h6 className="text-white font-semibold text-lg">Social</h6>
+        <div className='bg-sky-500 text-white flex flex-col justify-center items-center'>
+           
+            <div className="text-center p-4">
+                <h1 className="logo font-bold text-xl md:text-2xl">EcoWander</h1>
+                <p>
+                   Make a Eco Advanture 
+                  <br />
+                   All terms and condition are reserved for	&#169;EcoWnader
+                </p>
+                <p>+8801842482658</p>
+            </div>
+            <footer className="footer p-6 flex flex-col sm:flex-row sm:justify-around">
+              <nav>
+                <h6 className="font-bold text-lg">Services</h6>
+                <a className="link link-hover">Branding</a>
+                <a className="link link-hover">Plan</a>
+                <a className="link link-hover">Marketing</a>
+                <a className="link link-hover">Advertisement</a>
+              </nav>
+              <nav>
+                <h6 className="font-bold text-lg">Group</h6>
+                <a className="link link-hover">About us</a>
+                <a className="link link-hover">Contact</a>
+                <a className="link link-hover">Offer</a>
+                <a className="link link-hover">Medical</a>
+              </nav>
+      
+              <nav>
+                  <h6 className="font-bold text-lg">Social</h6>
                   <div className="grid grid-flow-col gap-4">
                     <a href="https://x.com/FardiRupon81077">
                       <svg
@@ -37,7 +53,7 @@ const Footer = () => {
                           d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
                       </svg>
                     </a>
-                    <a href="https://www.facebook.com/fardiislam.rupon">
+                    <a href="https://www.facebook.com/fardiislam.rupon" >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -49,8 +65,9 @@ const Footer = () => {
                       </svg>
                     </a>
                   </div>
-                </nav>
+              </nav>
             </footer>
+
         </div>
     );
 };
