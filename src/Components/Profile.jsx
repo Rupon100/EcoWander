@@ -7,8 +7,8 @@ import 'animate.css';
 const Profile = () => {
     const { user } = useContext(AuthContext);
     return (
-        <div className="p-24 flex flex-col gap-8 justify-center items-center">
-            <h2 className="text-center text-3xl md:text-4xl font-semibold animate__animated animate__lightSpeedInRight">Welcome, {user.displayName}! <br /> Your EcoWander profile is ready</h2>
+        <div className="p-8 md:p-24 flex flex-col gap-8 justify-center items-center">
+            <h2 className="text-center text-2xl md:text-4xl font-semibold animate__animated animate__lightSpeedInRight">Welcome, {user.displayName}! <br /> Your EcoWander profile is ready</h2>
             <div className="p-12 flex gap-4 flex-col justify-center items-center rounded shadow-md">
 
                 <img className="w-16 h-16 border rounded-full object-cover" src={user.photoURL} alt="user profile" />
