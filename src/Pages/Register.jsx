@@ -5,7 +5,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 
 const Register = () => {
-    const { registerUser, setUser, user } = useContext(AuthContext);
+    const { registerUser, setUser, user, upDateProfile } = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState("");
     const navigate = useNavigate();
@@ -28,12 +28,42 @@ const Register = () => {
             setError("");
         }
 
+        // registerUser(email, pass)
+        // .then(result => {
+        //     setUser(result.user);
+        //     navigate('/')
+        //     setError("");
+        // })
+
+        // upDateProfile(name, photo)
+        // .then(() => {
+        //   setUser({ ...user, displayName: name, photoURL: photo });
+        //   navigate('/profile')
+        // })
+
         registerUser(email, pass)
         .then(result => {
             setUser(result.user);
-            navigate('/')
-            setError("");
+            // navigate('/')
+            // setError("");
+            upDateProfile(name, photo);
         })
+        .then(() => {
+          setUser((prev) => ({
+            ...prev,
+            displayName: name,
+            photoURL: photo
+          }));
+          setError("");
+          navigate('/')
+        })
+
+        // upDateProfile(name, photo)
+        // .then(() => {
+        //   setUser({ ...user, displayName: name, photoURL: photo });
+        //   navigate('/profile')
+        // })
+
     }
     
     
