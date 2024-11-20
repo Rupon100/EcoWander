@@ -23,8 +23,8 @@ const UpdateProfile = () => {
 
 
     return (
-        <div className='flex gap-8 flex-col justify-center items-center my-24'>
-            <h1 className='font-semibold text-2xl md:text-4xl text-center animate__animated animate__lightSpeedInLeft'>Update Your Profile</h1>
+        <div className='flex gap-8 flex-col justify-center items-center my-24 animate__animated animate__fadeInLeft'>
+            <h1 className='font-semibold text-xl md:text-4xl text-center '>Update Your Profile</h1>
             <form onSubmit={handleUpdate} className="card-body max-w-xl shadow">
                 <div className="form-control">
                   <label className="label">

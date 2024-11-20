@@ -13,8 +13,8 @@ const Slider4 = () => {
         }}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center m-24 md:my-40">
-          <div className="max-w-md space-y-2">
-            <h1 className="text-2xl md:text-5xl font-bold animate__animated animate__bounceIn">Wildlife Safari Wonders</h1>
+          <div className="max-w-md space-y-2 animate__animated animate__fadeInUp">
+            <h1 className="text-2xl md:text-5xl font-bold">Wildlife Safari Wonders</h1>
             <p className="text-sm md:text-md">
               Embark on a sustainable journey through wild habitats, observing animals in their natural environments responsibly.
             </p>
