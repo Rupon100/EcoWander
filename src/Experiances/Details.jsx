@@ -25,8 +25,8 @@ const Details = () => {
     }
     
     return (
-        <div className="max-w-4xl mx-auto">
-            <div className="mx-2  my-4 p-4 border rounded-md flex justify-center items-center flex-col  gap-4">
+        <div className="max-w-4xl mx-auto min-h-screen">
+            <div className="mx-2 my-4 p-4 border rounded-md flex justify-center items-center flex-col  gap-4">
                <div className="w-full h-64 md:w-full">
                   <img className="w-full h-full object-cover rounded-md" src={image} alt="details image" />
                </div>

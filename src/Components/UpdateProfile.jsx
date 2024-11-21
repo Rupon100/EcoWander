@@ -26,7 +26,7 @@ const UpdateProfile = () => {
         <div className='min-h-screen w-full flex gap-8 flex-col justify-center items-center  animate__animated animate__fadeInUp'>
           <div className='space-y-4'>
             <h1 className='font-semibold text-xl md:text-4xl text-center '>Update Your Profile</h1>
-            <form onSubmit={handleUpdate} className="card-body max-w-xl shadow flex ">
+            <form onSubmit={handleUpdate} className="card-body w-full max-w-xl shadow flex ">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
