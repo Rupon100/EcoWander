@@ -16,7 +16,8 @@ const ForgetPass = () => {
     }
 
     return (
-        <div className="my-28 gap-8 flex justify-center items-center flex-col">
+        <div className="min-h-screen flex justify-center items-center">
+          <div className="my-28 gap-8 flex justify-center items-center flex-col">
             <h2 className="font-semibold text-2xl md:text-4xl">Forget Password?</h2>
             <form className="max-w-xl p-10 space-y-4 shadow">
                 <div className="form-control">
@@ -27,6 +28,7 @@ const ForgetPass = () => {
                 </div>
                 <button onClick={handleReset} className="w-full border-none text-white btn p-2 bg-sky-600 hover:bg-sky-500 " type="button">Reset Password</button>
             </form>
+          </div>
         </div>
     );
 };

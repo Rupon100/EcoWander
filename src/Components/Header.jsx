@@ -113,7 +113,7 @@ const Header = () => {
                 <div className='flex items-center'>
                     {
                         user 
-                        ? (<div title={user?.displayName} className="tooltip ring-text-sky-700 ring-offset-base-100 w-10 rounded-full ring ring-offset-2 cursor-pointer">
+                        ? (<div className="tooltip tooltip-left ring-text-sky-700 ring-offset-base-100 w-10 rounded-full ring ring-offset-2 cursor-pointer z-10 " data-tip={user?.displayName}>
                             <img className="w-10 h-10 border rounded-full object-cover" src={user?.photoURL} />
                           </div>)
                         : (<div>
